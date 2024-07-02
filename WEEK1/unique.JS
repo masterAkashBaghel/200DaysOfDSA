@@ -1,32 +1,25 @@
  
 // unique no of occurences
-//@note: Given an array of integers arr, write a function that returns true if and only if the number of occurrences of each value in the array is unique.
 
-class Solution
-{
-    public:
-    bool isFrequencyUnique(int n, int arr[])
-    {
-        unordered_map<int,int>mp;
-        for(int i =0;i<n;i++)
-        {
-            mp[arr[i]]++;
-            
+//@note: Given an array of integers arr, write a function that returns true if and only if the number of occurrences of each value in the array is unique.
+class Solution {
+    isFrequencyUnique(n, arr) {
+        const mp = {};
+        for (let i = 0; i < n; i++) {
+            mp[arr[i]] = (mp[arr[i]] || 0) + 1;
         }
-        vector<int>v;
-        for(auto i: mp)
-        {
-            v.push_back(i.second);
+        const v = [];
+        for (const key in mp) {
+            v.push(mp[key]);
         }
-        unordered_map<int,int>mp2;
-        for(int i =0;i<v.size();i++)
-        {
-            mp2[v[i]]++;
-            if(mp2[v[i]]>1)
-            {
-                return 0;
+        const mp2 = {};
+        for (let i = 0; i < v.length; i++) {
+            mp2[v[i]] = (mp2[v[i]] || 0) + 1;
+            if (mp2[v[i]] > 1) {
+                return false;
             }
         }
-        return 1;
+        return true;
     }
-};
+
+}
