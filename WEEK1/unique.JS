@@ -1,7 +1,7 @@
  
 // unique no of occurences
+//@note: Given an array of integers arr, write a function that returns true if and only if the number of occurrences of each value in the array is unique.
 
-//User function Template for C++
 class Solution
 {
     public:
